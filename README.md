@@ -7,3 +7,4 @@ Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw
 
 [Joseph Goebbels](https://en.wikipedia.org/wiki/Joseph_Goebbels), [Reich Minister of Propaganda](https://en.wikipedia.org/wiki/Reich_Ministry_of_Public_Enlightenment_and_Propaganda), [Nazi Germany](https://en.wikipedia.org/wiki/Nazi_Germany)
 
+Project Proposal: [pdf](Proposal/proposal.pdf)
