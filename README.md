@@ -10,9 +10,14 @@ Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw
 ### Project Proposal
 [pdf](reports/proposal.pdf)
 
-### Data Processing
+### Data Engineering
 [notebook](notebooks/data_processing.ipynb)
 
 Used the [FakeNewCorpus](https://github.com/several27/FakeNewsCorpus) by [@serveral27](https://github.com/several27). 
 
-Size of Original Corpus is 29 GB, after deleting certain columns, it came to 25 GB.
+Size of Original Corpus is 29 GB, after deleting certain columns, it came to 25 GB. Due to the large size of the corpus, [Dask](https://dask.org/), instead of [Pandas](https://pandas.pydata.org/), is used to process the data for its [out-of-core](https://en.wikipedia.org/wiki/External_memory_algorithm) characteristics.
+
+### Progress
+We are in the phase of developing an interim prototype. See [Projects](https://github.com/vicw0ng-hk/fake-real-news/projects/1).
+
+There will be two phases of development during the second semester of academic year 2020-21. More plan in proposal. 
