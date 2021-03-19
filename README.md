@@ -7,4 +7,12 @@ Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw
 
 [Joseph Goebbels](https://en.wikipedia.org/wiki/Joseph_Goebbels), [Reich Minister of Propaganda](https://en.wikipedia.org/wiki/Reich_Ministry_of_Public_Enlightenment_and_Propaganda), [Nazi Germany](https://en.wikipedia.org/wiki/Nazi_Germany)
 
-Project Proposal: [pdf](reports/proposal.pdf)
+### Project Proposal
+[pdf](reports/proposal.pdf)
+
+### Data Processing
+[notebook](notebooks/data_processing.ipynb)
+
+Used the [FakeNewCorpus](https://github.com/several27/FakeNewsCorpus) by [@serveral27](https://github.com/several27). 
+
+Size of Original Corpus is 29 GB, after deleting certain columns, it came to 25 GB.
