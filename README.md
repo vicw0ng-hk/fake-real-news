@@ -18,6 +18,6 @@ Used the [FakeNewCorpus](https://github.com/several27/FakeNewsCorpus) by [@serve
 Size of Original Corpus is 29 GB, after deleting certain columns, it came to 25 GB. Due to the large size of the corpus, [Dask](https://dask.org/), instead of [Pandas](https://pandas.pydata.org/), is used to process the data for its [out-of-core](https://en.wikipedia.org/wiki/External_memory_algorithm) characteristics.
 
 ### Progress
-We are in the phase of developing an interim prototype. ([Projects](https://github.com/vicw0ng-hk/fake-real-news/projects/1))
+We are in the phase of developing an interim prototype. (See [Kanban board](https://github.com/vicw0ng-hk/fake-real-news/projects/1))
 
-There will be two phases of development during the second semester of academic year 2020-21. More details in [proposal](#project-proposal). 
+There will be two phases of development during the second semester of academic year 2020-21. (Check the timeline in [proposal](#project-proposal)) 
