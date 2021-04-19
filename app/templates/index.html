@@ -9,8 +9,77 @@
     </head>
 
     <body>
-        <div class="container-xl"> 
-            <h1>Hello!</h1>
+        <div class="container-xl">
+            <h1>Is what you are seeing REAL? &#x1F914;</h1>
+            <h3>Test your news!</h3>
+            <form class="row g-3 needs-validation" action="{{ url_for('result') }}" method="post" novalidate>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">URL</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="url">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="validationCustom02" name="title">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="validationCustom03" class="form-label">Authors</label>
+                    <input type="text" class="form-control" id="validationCustom02" name="authors">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="validationCustom04" class="form-label">Content</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" required></textarea>
+                    <div class="invalid-feedback">
+                        Please provide the content.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary btn-lg" type="submit">Check!</button>
+                </div>
+            </form>
         </div>
     </body>
+    
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+          'use strict'
+        
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.querySelectorAll('.needs-validation')
+        
+          // Loop over them and prevent submission
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+        
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+    </script>
 </html>
