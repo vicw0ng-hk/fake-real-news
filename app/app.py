@@ -1,12 +1,30 @@
 from flask import Flask, render_template, request, redirect
 from flask_wtf.csrf import CSRFProtect
+from flask_sqlalchemy import SQLAlchemy
 from fastai.text.all import load_learner
 import os
 
-SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
+
+SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 csrf = CSRFProtect(app)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///feedback.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+
+class Feedback(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    type = db.Column(db.String(20))
+    text = db.Column(db.Text)
+
+    def __init__(self, type, text):
+        self.type = type
+        self.text = text
+
+    def __repr__(self):
+        return self.type
 
 learn = load_learner(app.root_path + '/model/model.pkl')
 vocab = ['bias', 'clickbait', 'conspiracy', 'fake', 'hate', 
@@ -31,8 +49,11 @@ def result():
 
 @app.route('/hidden/', methods=['POST'])
 def hidden():
-    print(request.form)
+    fb = Feedback(request.form['type'], request.form['text'])
+    db.session.add(fb)
+    db.session.commit()
     return 'Feedback recorded!'
 
 if __name__ == "__main__":
+    db.create_all()
     app.run(debug=True)

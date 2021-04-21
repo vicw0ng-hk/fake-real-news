@@ -41,11 +41,11 @@
                 </tbody>
             </table>
             <p>What do you think this article is most likely?</p>
-            <form class="row g-3" action="/hidden/" method="post" id="myForm">
+            <form class="row g-3" action="{{ url_for('hidden') }}" method="post" id="myForm">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                 <input type="hidden" name="text" value="{{ context.text }}"/>
                 <div class="col">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="feedback">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="type">
                         <optgroup label="Choose One">
                         <option value="bias">bias</option>
                         <option value="clickbait">clickbait</option>
