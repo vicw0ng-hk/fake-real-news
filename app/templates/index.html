@@ -11,7 +11,7 @@
     <body>
         <div class="container-xl">
             <h1>Is what you are seeing REAL? &#x1F914;</h1>
-            <h3>Test your news!</h3>
+            <h3>Test your news! (URL, Title and Authors are optional)</h3>
             <form class="row g-3 needs-validation" action="{{ url_for('result') }}" method="post" novalidate>
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                 <div class="col-md-4">

@@ -6,6 +6,7 @@
         <title>Test Result</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -22,12 +23,68 @@
                 {% if context.authors %}
                     {{ context.authors }}
                 {% endif %}
-                {% if context.authors or context.title %}
-                    is 
-                {% endif %}
-                <strong>fake news</strong>
             </h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Probability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in context.pred %}
+                    <tr>
+                        <td>{{ p.0 }}</td>
+                        <td>{{ p.1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p>What do you think this article is most likely?</p>
+            <form class="row g-3" action="/hidden/" method="post" id="myForm">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <input type="hidden" name="text" value="{{ context.text }}"/>
+                <div class="col">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="feedback">
+                        <optgroup label="Choose One">
+                        <option value="bias">bias</option>
+                        <option value="clickbait">clickbait</option>
+                        <option value="conspiracy">conspiracy</option>
+                        <option value="fake">fake</option>
+                        <option value="hate">hate</option>
+                        <option value="junksci">junksci</option>
+                        <option value="political">political</option>
+                        <option value="reliable">reliable</option>
+                        <option value="satire">satire</option>
+                        <option value="unreliable">unreliable</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning btn-lg" type="submit" id="message">Submit Feedback!</button>
+                    <div id="message"></div>
+                </div>
+            </form>
             <a href="/" class="btn btn-success btn-lg">Back!</a>
         </div>
     </body>
+    <script>
+    $(function() {
+        $("#myForm").on("submit", function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr("action"),
+                type: 'POST',
+                data: $(this).serialize(),
+                beforeSend: function() {
+                    $('#message').prop('disabled', true);
+                    $("#message").html("sending...");
+                },
+                success: function(data) {
+                    $("#message").html(data);
+                }
+            });
+        });
+    });
+    </script>
 </html>

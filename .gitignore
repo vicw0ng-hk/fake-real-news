@@ -168,7 +168,7 @@ Thumbs.db
 #   git rm -r .ipynb_checkpoints/
 
 ### vscode ###
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
