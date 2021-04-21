@@ -1,11 +1,15 @@
 from flask import Flask, render_template, request, redirect
 from flask_wtf.csrf import CSRFProtect
+from fastai.text.all import load_learner
 import os
 
 SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
 csrf = CSRFProtect(app)
+
+# learn = load_learner('app/model/model.pkl')
+print('************************')
 
 @app.route('/')
 def index():
@@ -17,6 +21,7 @@ def result():
     title = request.form['title']
     authors = request.form['authors']
     content = request.form['content']
+    text = ' | '.join([url, title, authors, content])
     context = {'url': url, 'title': title, 'authors': authors, 'content': content}
     return render_template('result.html', context=context)
 
