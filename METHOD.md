@@ -40,6 +40,8 @@ To build a text classifier model we must first build a language model. :speech_b
 [fastai](https://www.fast.ai/) handles tokenization and numericalization automatically when `TextBlock` is passed to `DataBlock`. All of the arguments that can be passed to `Tokenizer` and `Numericalize` can also be passed to `TextBlock`.
 
 ```python
+from fastai.text.all import *
+
 dls_lm = DataBlock(blocks=TextBlock.from_df('content', is_lm=True),
                    get_x=ColReader('text'), splitter=RandomSplitter(0.1)
                   ).dataloaders(df, bs=32, seq_len=80)
@@ -53,5 +55,15 @@ fastai has some optimization on this:
 > - It runs multiple tokenization processes in parallel, to take advantage of your computer’s CPUs.
 
 Now that we have handled our data, let's fine-tune the pretrained language model. 
+
+To convert the integer word indices into activations that we can use for our neural network, we will use embeddings, just as we did for collaborative filtering and tabular modeling. Then we’ll feed those embeddings into a [recurrent neural network (RNN)](https://en.wikipedia.org/wiki/Recurrent_neural_network), using an architecture called [AWD-LSTM](https://docs.fast.ai/text.models.awdlstm.html). (Check out [Smerity et al.](https://arxiv.org/pdf/1708.02182.pdf))
+
+the embeddings in the pretrained model are merged with random embeddings added for words that weren’t in the pretraining vocabulary. This is handled automatically inside [`language_model_learner`](https://docs.fast.ai/text.learner.html#language_model_learner):
+
+```python
+learn = language_model_learner(
+        dls_lm, AWD_LSTM, drop_mult=0.3,
+        metrics=[accuracy, Perplexity()]).to_fp16()
+```
 
 ### Web app
