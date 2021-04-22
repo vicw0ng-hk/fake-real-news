@@ -27,8 +27,4 @@ python app.py
 
 ### Methodology :gear:
 
-Check out this document. 
-
-Used the [FakeNewCorpus](https://github.com/several27/FakeNewsCorpus) by [@serveral27](https://github.com/several27). :pray: 
-
-Size of Original Corpus is 29 GB :astonished:, after deleting certain columns, it came to 25 GB :cry:. Due to the large size of the corpus, [Dask](https://dask.org/), instead of [Pandas](https://pandas.pydata.org/), is used to process the data for its [out-of-core](https://en.wikipedia.org/wiki/External_memory_algorithm) characteristics. :+1:
+Check out the [Methodology](METHOD.md) document.
