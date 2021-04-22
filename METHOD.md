@@ -41,7 +41,7 @@ for i in range(459):
 
 To build a text classifier model we must first build a language model. :speech_balloon:
 
-[fastai](https://www.fast.ai/) handles tokenization and numericalization automatically when `TextBlock` is passed to `DataBlock`. All of the arguments that can be passed to `Tokenizer` and `Numericalize` can also be passed to `TextBlock`.
+[fastai](https://www.fast.ai/) handles tokenization and numericalization automatically when `TextBlock` is passed to `DataBlock`. All of the arguments that can be passed to `Tokenizer` and `Numericalize` can also be passed to `TextBlock`. :+1:
 
 ```python
 from fastai.text.all import *
@@ -53,14 +53,14 @@ dls_lm = DataBlock(blocks=TextBlock.from_df('content', is_lm=True),
 
 The reason that `TextBlock` is special is that setting up the numericalizer’s vocab can take a long time (we have to read and tokenize every document to get the vocab). 
 
-fastai has some optimization on this:
+fastai has some optimization on this: :point_down:
 
 > - It saves the tokenized documents in a temporary folder, so it doesn’t have to tokenize them more than once.
 > - It runs multiple tokenization processes in parallel, to take advantage of your computer’s CPUs.
 
 Now that we have handled our data, let's fine-tune the pretrained language model. 
 
-To convert the integer word indices into activations that we can use for our neural network, we will use [embeddings](https://en.wikipedia.org/wiki/Word_embedding). Then we’ll feed those embeddings into a [recurrent neural network (RNN)](https://en.wikipedia.org/wiki/Recurrent_neural_network), using an architecture called [AWD-LSTM](https://docs.fast.ai/text.models.awdlstm.html). (Check out [Smerity et al.](https://arxiv.org/pdf/1708.02182.pdf))
+To convert the integer word indices into activations that we can use for our neural network, we will use [embeddings](https://en.wikipedia.org/wiki/Word_embedding). Then we’ll feed those embeddings into a [recurrent neural network (RNN)](https://en.wikipedia.org/wiki/Recurrent_neural_network), using an architecture called [AWD-LSTM](https://docs.fast.ai/text.models.awdlstm.html). (Check out [Smerity et al.](https://arxiv.org/pdf/1708.02182.pdf)) :eyes:
 
 the embeddings in the pretrained model are merged with random embeddings added for words that weren’t in the pretraining vocabulary. This is handled automatically inside [`language_model_learner`](https://docs.fast.ai/text.learner.html#language_model_learner):
 
@@ -72,13 +72,13 @@ learn = language_model_learner(
 
 The loss function used by default is cross-entropy loss, since we essentially have a classification problem. The perplexity metric used here is often used in NLP for language models: it is the exponential of the loss (`torch.exp(cross_entropy)`). We also include the accuracy metric to see how many times our model is right when trying to predict the next word, since cross entropy is both hard to interpret and tells us more about the model’s confidence than its accuracy.
 
-Then we can start to use `learn.fit_one_cycle()` to train our language model (we also uesd `learn.lr_find()` to find a good learning rate). After each time we trained, we would use `learn.save()` to save a copy of the state of our model as it takes quite a while to train an epoch. When come back to training after leaving for something else, we can use `learn = learn.load()` to load the state back, unfreeze the state by `learn.unfreeze()` and continue training. We would substitude new data using `learn.dls = dls_lm_new` as the RAM limits on GPU Farm does not allow use to use all data in one go. The accuracy of the language model came to upper 30s to 40s percent.
+Then we can start to use `learn.fit_one_cycle()` to train our language model (we also uesd `learn.lr_find()` to find a good learning rate). After each time we trained, we would use `learn.save()` to save a copy of the state of our model as it takes quite a while to train an epoch. When come back to training after leaving for something else, we can use `learn = learn.load()` to load the state back, unfreeze the state by `learn.unfreeze()` and continue training. We would substitude new data using `learn.dls = dls_lm_new` as the RAM limits on GPU Farm does not allow us to use all data in one go. The accuracy of the language model came to upper 30s to 40s percent.
 
-After training language model, we saved the model (excluding the final layer, of course) using `learn.save_encoder('finetuned')`.
+After training language model, we saved the model (excluding the final layer, of course) using `learn.save_encoder('finetuned')`. :fist:
 
 #### Classifier Model
 
-This is similar to what we have done above, with dataloaders as:
+This is similar to what we have done above :arrow_up:, with dataloaders as:
 
 ```python
 dls_clas = DataBlock(blocks=(TextBlock.from_df('content'),CategoryBlock),
@@ -89,7 +89,7 @@ dls_clas = DataBlock(blocks=(TextBlock.from_df('content'),CategoryBlock),
 
 The major difference is that `is_lm` is gone because this is no longer training for a language model, and there is an additional [`CategoryBlock`](https://docs.fast.ai/data.block.html#CategoryBlock). 
 
-We can now create a model to classify our texts:
+We can now create a model using [`text_classifier_learner`](https://docs.fast.ai/text.learner.html#text_classifier_learner) to classify our texts:
 
 ```python
 learn = text_classifier_learner(dls_clas, AWD_LSTM, drop_mult=0.5,
@@ -102,6 +102,8 @@ And then load the encoder we saved earier:
 learn = learn.load_encoder('finetuned')
 ```
 
-Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 40% - 98%. 
+Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 40% - 98%. :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in our discussion of limitations. :thinking:
 
 ### Web app
+
+We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [app.py](app/app.py). 
