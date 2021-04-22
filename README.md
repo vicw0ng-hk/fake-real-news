@@ -59,7 +59,7 @@ pip3 install -r requirements.txt
 python3 app.py
 ```
 
-### Methodology :gear:
+### Methodology :hammer_and_wrench:
 
 Check out the [Methodology](METHOD.md) document.
 
