@@ -1,6 +1,6 @@
 # fake-real-news
 
-A news Classifier in the fight against disinformation by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
+A news classifier in the fight against disinformation by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
 
 - Group project for [COMP3359 Artificial Intelligence Applications](https://www.cs.hku.hk/index.php/programmes/course-offered?infile=2020/comp3359.html, "COMP3359 Artificial Intelligence Applications [Section 2A, 2020]") @ [HKU](https://hku.hk, "The University of Hong Kong") :school:
 
@@ -13,6 +13,8 @@ A news Classifier in the fight against disinformation by [HUANG, Sheng](https://
 THERE IS NO ALGORITHM FOR TRUTH. 
 
 [![YouTube](https://img.youtube.com/vi/leX541Dr2rU/0.jpg)](https://www.youtube.com/watch?v=leX541Dr2rU&t=3377s)
+
+What is our relationship with the truth? :confused: That is a philosophical question. 
 
 ### Reports :books:
 
