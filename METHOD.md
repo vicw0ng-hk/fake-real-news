@@ -102,7 +102,7 @@ And then load the encoder we saved earier:
 learn = learn.load_encoder('finetuned')
 ```
 
-Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 40% - 98%. :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in our discussion of limitations. :thinking:
+Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 30% - 98% (check out one [testing example](test.ipynb)). :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in our discussion of limitations. :thinking:
 
 ### Web app
 
