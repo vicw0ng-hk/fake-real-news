@@ -25,20 +25,20 @@ Cloing through SSH is better for security reasons. :closed_lock_with_key:
 git clone git@github.com:vicw0ng-hk/fake-real-news.git
 ```
 
-Due to the large size of our model, it is stored with [Git LFS](https://docs.github.com/en/github/managing-large-files/versioning-large-files), and because of [GitHub's bandwidth limit](https://docs.github.com/en/github/managing-large-files/about-storage-and-bandwidth-usage), please use this [link](https://drive.google.com/file/d/1iKYjwwRu4ihJApT1ZoZosCAPXkhX9qAk/view?usp=sharing) to download `model.pkl` and replace the file in the cloned directory. 
+Due to the large size of our model, it is stored with [Git LFS](https://docs.github.com/en/github/managing-large-files/versioning-large-files), and because of [GitHub's bandwidth limit](https://docs.github.com/en/github/managing-large-files/about-storage-and-bandwidth-usage) :construction:, please use this [link](https://drive.google.com/file/d/1iKYjwwRu4ihJApT1ZoZosCAPXkhX9qAk/view?usp=sharing) :point_left: to download [`model.pkl`](app/model/model.pkl) and replace the file in the cloned directory. 
 
 #### 1. Installing environment :palm_tree:
 
 This may be different depending on the virtualization technology you are using :shrug:, but generally do
 ```bash
 cd app/
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 #### 2. Run the app! :bullettrain_front:
 
 ```bash
-python app.py
+python3 app.py
 ```
 
 ### Methodology :gear:
