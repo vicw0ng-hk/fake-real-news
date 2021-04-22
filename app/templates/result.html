@@ -78,7 +78,7 @@
                 data: $(this).serialize(),
                 beforeSend: function() {
                     $('#message').prop('disabled', true);
-                    $("#message").html("sending...");
+                    $("#message").html("Sending...");
                 },
                 success: function(data) {
                     $("#message").html(data);
