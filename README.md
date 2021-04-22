@@ -74,15 +74,24 @@ Check out the [Functionalities](FUNCTION.md) document.
 In addition to the restrictions of [GNU Affero General Public License v3.0](LICENSE) of this repo, you also agree to the following terms and conditions:
 
 ```
-YOUR USE OF THIS WEB APP CONSTITUTES YOUR AGREEMENT TO BE BOUND BY THESE TERMS AND CONDITIONS OF USE.
+YOUR USE OF THIS WEB APP CONSTITUTES YOUR AGREEMENT 
+TO BE BOUND BY THESE TERMS AND CONDITIONS OF USE.
 
-1. The classification of the text you submit to this web app is in no way legal recognition. The web 
-app and/or its authors bear no legal responsiblities for its result. If you choose to publish the 
-result, the web app and/or its authors shall not bear any legal consequences relating to this action.  
-2. You shall be liable for the legal reponsibilities of the copyright of the text you submit to this 
-web app. You shall gain the right to copy the text before you submit it to the web app. 
-3. This web app shall not be used by any political party and/or any entity, partially or entirely, 
-funded and/or controlled by a political party in any jurisdiction. 
-4. In case of any discrepency with any other license, terms or conditions associated with this web app 
+1. The classification of the text you submit to this 
+web app is in no way legal recognition. The web app 
+and/or its authors bear no legal responsiblities for 
+its result. If you choose to publish the result, the 
+web app and/or its authors shall not bear any legal 
+consequences relating to this action.  
+2. You shall be liable for the legal reponsibilities 
+of the copyright of the text you submit to this web 
+app. You shall gain the right to copy the text before 
+you submit it to the web app. 
+3. This web app shall not be used by any political 
+party and/or any entity, partially or entirely, 
+funded and/or controlled by a political party in any 
+jurisdiction. 
+4. In case of any discrepency with any other license, 
+terms or conditions associated with this web app 
 and/or its repository, this agreement shall prevail. 
 ```
