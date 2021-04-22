@@ -17,7 +17,7 @@ db = SQLAlchemy(app)
 class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(20))
-    text = db.Column(db.Text)
+    text = db.Column('content', db.Text)
 
     def __init__(self, type, text):
         self.type = type
