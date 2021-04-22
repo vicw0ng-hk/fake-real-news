@@ -119,7 +119,7 @@ And then load the encoder we saved earlier:
 learn = learn.load_encoder('finetuned')
 ```
 
-Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 30% - 98% (check out one [testing example](test.ipynb)). :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in our discussion of limitations. :thinking:
+Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 30% - 98% (check out one [testing example](test.ipynb)). :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in [our discussion of limitations](README.md#limitations-triangular_ruler). :thinking:
 
 ### Web app
 
@@ -130,5 +130,5 @@ We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python w
 - Since Flask supports [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), we ued it for our [HTML templates](app/templates), adding a dynamic component to static templates.
 - We used [Bootstrap](https://getbootstrap.com/) to customize the look and feel of our web pages. We also included JavaScript and [jQuery](https://jquery.com/) to implement certain styles.  
 - We implemented CSRF Protection ([CSRFProtec](https://flask-wtf.readthedocs.io/en/stable/api.html#flask_wtf.csrf.CSRFProtect) from [Flask-WTF](https://flask-wtf.readthedocs.io/)) in POST form submissions. 
-- We used [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) to interact with [SQLite3](https://www.sqlite.org/index.html), which stores use feedback and we can us the feedback to better train our model. Mode on this in our discussion of functionalities. 
+- We used [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) to interact with [SQLite3](https://www.sqlite.org/index.html), which stores use feedback and we can us the feedback to better train our model. Mode on this in [our discussion of functionalities](FUNCTION.md). 
 - We used [`load_learner`](https://docs.fast.ai/learner.html#load_learner) from fastai to load the trained model and then use the model to get predictions on our input. 
