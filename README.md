@@ -29,7 +29,7 @@ Or, clone through SSH for better security. :closed_lock_with_key:
 git clone git@github.com:vicw0ng-hk/fake-real-news.git
 ```
 
-Or, clone with [GitHub CLI](https://cli.github.com/):
+Or, clone with [GitHub CLI](https://cli.github.com/) :octocat:
 
 ```bash
 gh repo clone vicw0ng-hk/fake-real-news
