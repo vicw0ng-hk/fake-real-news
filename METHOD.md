@@ -96,7 +96,7 @@ learn = text_classifier_learner(dls_clas, AWD_LSTM, drop_mult=0.5,
                                 metrics=accuracy).to_fp16()
 ```
 
-And then load the encoder we saved earier:
+And then load the encoder we saved earlier:
 
 ```python
 learn = learn.load_encoder('finetuned')
