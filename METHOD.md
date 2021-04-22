@@ -123,7 +123,7 @@ Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze
 
 ### Web app
 
-We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [app.py](app/app.py). 
+We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [`app.py`](app/app.py). 
 
 #### Some Highlights :camera:
 
