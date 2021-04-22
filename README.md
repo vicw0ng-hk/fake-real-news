@@ -12,7 +12,7 @@ Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw
 - Interim Report :bookmark_tabs: [pdf](reports/prototype.pdf)
 
 ### Running :running_man: :running_woman:
-It's highly recommended to run the app on a POSIX system. :bangbang: Using Windows may cause some issues when installing dependencies. :cry:
+It's highly :top: recommended to run the app on a Unix-like system (Linux, macOS, ...). :bangbang: Using Windows may cause some issues when installing dependencies. :cry:
 #### 1. Installing environment :palm_tree:
 This may be different depending on the virtualization technology you are using :shrug:, but generally do
 ```bash
@@ -26,6 +26,8 @@ python app.py
 ```
 
 ### Methodology :gear:
+
+Check out this document. 
 
 Used the [FakeNewCorpus](https://github.com/several27/FakeNewsCorpus) by [@serveral27](https://github.com/several27). :pray: 
 
