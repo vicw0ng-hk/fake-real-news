@@ -88,9 +88,9 @@ of the copyright of the text you submit to this web
 app. You shall gain the right to copy the text before 
 you submit it to the web app. 
 3. This web app shall not be used by any political 
-party and/or any entity, partially or entirely, 
-funded and/or controlled by a political party in any 
-jurisdiction. 
+organization and/or any entity, partially or entirely, 
+directly or indirectly, funded and/or controlled by a 
+political organization in any jurisdiction. 
 4. In case of any discrepency with any other license, 
 terms or conditions associated with this web app 
 and/or its repository, this agreement shall prevail. 
