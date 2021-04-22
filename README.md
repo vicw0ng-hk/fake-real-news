@@ -1,5 +1,7 @@
 # fake-real-news
 
+![python](https://img.shields.io/badge/python-3.8.6-yellow) ![fastai](https://img.shields.io/badge/fastai-2.3.0-blue) ![flask](https://img.shields.io/badge/flask-1.1.2-lightgrey)
+
 A news classifier in the fight against disinformation by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
 
 - Group project for [COMP3359 Artificial Intelligence Applications](https://www.cs.hku.hk/index.php/programmes/course-offered?infile=2020/comp3359.html "COMP3359 Artificial Intelligence Applications [Section 2A, 2020]") @ [HKU](https://hku.hk "The University of Hong Kong") :school:
