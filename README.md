@@ -19,10 +19,20 @@ It's highly :top: recommended to run the app on a Unix-like system (Linux, macOS
 
 #### 0. Cloning the repository :arrow_down:
 
-Cloing through SSH is better for security reasons. :closed_lock_with_key:
+```bash
+git clone https://github.com/vicw0ng-hk/fake-real-news.git
+```
+
+Or, clone through SSH for better security. :closed_lock_with_key:
 
 ```bash
 git clone git@github.com:vicw0ng-hk/fake-real-news.git
+```
+
+Or, clone with [GitHub CLI](https://cli.github.com/):
+
+```bash
+gh repo clone vicw0ng-hk/fake-real-news
 ```
 
 Due to the large size of our model, it is stored with [Git LFS](https://docs.github.com/en/github/managing-large-files/versioning-large-files), and because of [GitHub's bandwidth limit](https://docs.github.com/en/github/managing-large-files/about-storage-and-bandwidth-usage) :construction:, please use this [link](https://drive.google.com/file/d/1iKYjwwRu4ihJApT1ZoZosCAPXkhX9qAk/view?usp=sharing) :point_left: to download [`model.pkl`](app/model/model.pkl) and replace the file in the cloned directory. 
