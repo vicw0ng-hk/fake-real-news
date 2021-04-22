@@ -1,6 +1,6 @@
 # fake-real-news
 
-Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
+A news Classifier in the fight against disinformation by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
 
 - Group project for [COMP3359 Artificial Intelligence Applications](https://www.cs.hku.hk/index.php/programmes/course-offered?infile=2020/comp3359.html, "COMP3359 Artificial Intelligence Applications [Section 2A, 2020]") @ [HKU](https://hku.hk, "The University of Hong Kong") :school:
 
@@ -14,8 +14,6 @@ THERE IS NO ALGORITHM FOR TRUTH.
 
 [![YouTube](https://img.youtube.com/vi/leX541Dr2rU/0.jpg)](https://www.youtube.com/watch?v=leX541Dr2rU&t=3377s)
 
-
-
 ### Reports :books:
 
 - Proposal :bookmark_tabs: [pdf](reports/proposal.pdf)
@@ -23,7 +21,7 @@ THERE IS NO ALGORITHM FOR TRUTH.
 
 ### Running :running_man: :running_woman:
 
-It's highly :top: recommended to run the app on a Unix-like system (Linux, macOS, ...). :bangbang: Using Windows may cause some issues when installing dependencies. :cry:
+It's highly :top: recommended to run the app on a Unix-like system (GNU/Linux, macOS, ...). :bangbang: Using Windows may cause some issues when installing dependencies. :cry:
 
 #### 0. Cloning the repository :arrow_down:
 
