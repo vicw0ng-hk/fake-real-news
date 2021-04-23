@@ -85,7 +85,7 @@ Check out the [Functionalities](FUNCTION.md) document.
 
 ### Limitations :triangular_ruler:
 
-- One major limitation is from the categorization of our dataset. :one: The dataset we have is a single-label dataset. But this is not in accord with the reality. For example, many conspiracies are highly political, hence a lot of the articles with the `conspiracy` tag may also fit into the `political` tag. Hence, by this feature of the dataset, accuracy of training has not been very high for some of the test cases. And it is susceptible to overfitting if we train too much for higher accuracy, which is why we chose to present the predictions in the app by probablities. (Check out [Functionalities](FUNCTION.md))
+- One major limitation is from the categorization of our dataset. :one: The dataset we have is a single-label dataset. But this is not in accord with the reality. For example, many conspiracies are highly political, hence a lot of the articles with the `conspiracy` tag may also fit into the `political` tag. Hence, by this feature of the dataset, accuracy of training has not been very high for some of the test cases. And it is susceptible to overfitting if we train too much for higher accuracy, which is why we chose to present the predictions in the app by probabilities. (Check out [Functionalities](FUNCTION.md))
 
 - Another limitation is our development time and resources. :two: We have a very large dataset (Check out [Methodology](METHOD.md#data)). However, we cannot make full use of it because we have limited time and resourses allocated by GPU Farm is relatively restrictive compared to the size of our dataset. Hence, we used only a portion of the total data to train our model. 
 
@@ -113,7 +113,7 @@ you submit it to the web app.
 organization and/or any entity, partially or entirely, 
 directly or indirectly, funded and/or controlled by a 
 political organization in any jurisdiction. 
-4. In case of any discrepency with any other license, 
+4. In case of any discrepency with any other licenses, 
 terms or conditions associated with this web app 
 and/or its repository, this agreement shall prevail. 
 ```
