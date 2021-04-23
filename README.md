@@ -85,6 +85,12 @@ Check out the [Functionalities](FUNCTION.md) document.
 
 ### Limitations :triangular_ruler:
 
+- One major limitation is from the categorization of our dataset. :one: The dataset we have is a single-label dataset. But this is not in accord with the reality. For example, many conspiracies are highly political, hence a lot of the articles with the `conspiracy` tag may also fit into the `political` tag. Hence, by this feature of the dataset, accuracy of training has not been very high for some of the test cases. And it is susceptible to overfitting if we train too much for higher accuracy, which is why we chose to present the predictions in the app by probablities. (Check out [Functionalities](FUNCTION.md))
+
+- Another limitation is our development time and resources. We have a very large dataset (Check out [Methodology](METHOD.md#data)). However, we cannot make full use of it because we have limited time and resourses allocated by GPU Farm is relatively restrictive compared to the size of our dataset. 
+
+- There is also the limitation of the capabilities of machines. We can only use the content (plus its URL, Title and Authors) to decide the categorization of new articles. For some articles, humans could easily tell their nature and authenticity based on common sense and general knowledge. However, the model cannot think that way, so some of the easy-to-recognize evidence to a human is difficult to find for the model. 
+
 ### Terms and Conditions :scroll:
 
 In addition to the restrictions of [GNU Affero General Public License v3.0](LICENSE) of this repo, you also agree to the following terms and conditions:
