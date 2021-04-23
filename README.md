@@ -36,6 +36,7 @@ THERE IS NO ALGORITHM FOR TRUTH.
 
 - Proposal :bookmark_tabs: [pdf](reports/proposal.pdf)
 - Interim Report :bookmark_tabs: [pdf](reports/prototype.pdf)
+- Final Report :bookmark_tabs: [pdf](reports/final.pdf)
 
 ### Running :running_man: :running_woman:
 
