@@ -121,9 +121,11 @@ learn = learn.load_encoder('finetuned')
 
 Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 30% - 98% (check out one [testing example](test.ipynb)). :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in [our discussion of limitations](https://github.com/vicw0ng-hk/fake-real-news#limitations-triangular_ruler). :thinking:
 
+After training, simply use `learn.export()` to export the model for the web app in the next step.
+
 ### Web app
 
-We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [`app.py`](app/app.py). 
+We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [`app/app.py`](app/app.py). 
 
 #### Some Highlights :camera:
 
