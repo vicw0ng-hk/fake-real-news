@@ -38,7 +38,9 @@ And click on **Submit Feedback**...
 
 And you will see that it has been recorded, and you can go back now by clicking no **Back!**...
 
-What happens to the recorded data? :confused: If you check `app/app.py`, you will see that it has been recorded in a database called `feedback.sqlite3`. You can use the following code to get recorded feedbacks:
+### Sustainability :earth_americas:
+
+What happens to the recorded data? :confused: If you check [`app/app.py`](app/app.py), you will see that it has been recorded in a database called `feedback.sqlite3`. You can use the following code to get recorded feedbacks:
 
 ```python
 import pandas as pd
@@ -47,8 +49,6 @@ import sqlite3
 conn = sqlite3.connect('feedback.sqlite3')
 df = pd.read_sql_query('SELECT * from Feedback', conn, index_col='id').reset_index(drop=True, inplace=True)
 ```
-
-### Sustainability :earth_americas:
 
 You can further clean the data as in [Methodology](METHOD.md#data) and then use 
 
