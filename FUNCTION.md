@@ -2,43 +2,43 @@
 
 After running app (Check [how to run](https://github.com/vicw0ng-hk/fake-real-news#running-running_man-running_woman)), go to the link prompted in the terminal, which is usually `localhost:5000`, and you will see...
 
-### 0
+### :zero:
 
 ![0](img/0.png)
 
 And then you will find out that `URL`, `Title` an `Authors` are optional fields...
 
-### 1
+### :one:
 
 ![1](img/1.png)
 
 You can find a news article and fill in the information (I am going to use [this](https://www.bbc.com/news/world-europe-56854267))...
 
-### 2
+### :two:
 
 ![2](img/2.png)
 
 Agree to our [terms and conditions](https://github.com/vicw0ng-hk/fake-real-news#terms-and-conditions-scroll), and you can click on **Check!**...
 
-### 3
+### :three:
 
 ![3](img/3.png)
 
 It is indeed a political coverage! But if you disagree, choose another type...
 
-### 4
+### :four:
 
 ![4](img/4.png)
 
 And click on **Submit Feedback**...
 
-### 5
+### :five:
 
 ![5](img/5.png)
 
 And you will see that it has been recorded, and you can go back now by clicking no **Back!**...
 
-What happens to the recorded data? If you check `app/app.py`, you will see that it has been recorded in a database called `feedback.sqlite3`. You can use the following code to get recorded feedbacks:
+What happens to the recorded data? :confused: If you check `app/app.py`, you will see that it has been recorded in a database called `feedback.sqlite3`. You can use the following code to get recorded feedbacks:
 
 ```python
 import pandas as pd
