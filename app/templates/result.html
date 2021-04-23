@@ -40,6 +40,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <p>Learn more about the types <a href="https://github.com/vicw0ng-hk/fake-real-news/blob/main/METHOD.md#types">here</a>.</p>
             <p>What do you think this article is most likely?</p>
             <form class="row g-3" action="{{ url_for('hidden') }}" method="post" id="myForm">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
