@@ -1,12 +1,22 @@
 # fake-real-news
 
-Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
+![python](https://img.shields.io/badge/python-3.8.6-yellow) ![fastai](https://img.shields.io/badge/fastai-2.3.0-blue) ![flask](https://img.shields.io/badge/flask-1.1.2-lightgrey)
 
-- Group project for [COMP3359 Artificial Intelligence Applications](https://www.cs.hku.hk/index.php/programmes/course-offered?infile=2020/comp3359.html, "COMP3359 Artificial Intelligence Applications [Section 2A, 2020]") @ [HKU](https://hku.hk, "The University of Hong Kong") :school:
+A news classifier in the fight against disinformation by [HUANG, Sheng](https://github.com/vicw0ng-hk) & [LI, Yik Wai](https://github.com/liyikwai). :handshake:
+
+- Group project for [COMP3359 Artificial Intelligence Applications](https://www.cs.hku.hk/index.php/programmes/course-offered?infile=2020/comp3359.html "COMP3359 Artificial Intelligence Applications [Section 2A, 2020]") @ [HKU](https://hku.hk "The University of Hong Kong") :school:
 
 > :label: "If you tell a lie big enough and keep repeating it, people will eventually come to believe it. The lie can be maintained only for such time as the State can shield the people from the political, economic and/or military consequences of the lie. It thus becomes vitally important for the State to use all of its powers to repress dissent, for the truth is the mortal enemy of the lie, and thus by extension, the truth is the greatest enemy of the State."
 
 [Joseph Goebbels](https://en.wikipedia.org/wiki/Joseph_Goebbels), [Reich Minister of Propaganda](https://en.wikipedia.org/wiki/Reich_Ministry_of_Public_Enlightenment_and_Propaganda), [Nazi Germany](https://en.wikipedia.org/wiki/Nazi_Germany)
+
+### Mission :anchor:
+
+THERE IS NO ALGORITHM FOR TRUTH. 
+
+[![YouTube](https://img.youtube.com/vi/leX541Dr2rU/0.jpg)](https://www.youtube.com/watch?v=leX541Dr2rU&t=3377s)
+
+What is our relationship with the truth? :confused: That is a philosophical question. 
 
 ### Reports :books:
 
@@ -15,7 +25,7 @@ Classifier for fake news and real news by [HUANG, Sheng](https://github.com/vicw
 
 ### Running :running_man: :running_woman:
 
-It's highly :top: recommended to run the app on a Unix-like system (Linux, macOS, ...). :bangbang: Using Windows may cause some issues when installing dependencies. :cry:
+It's highly :top: recommended to run the app on a Unix-like system (GNU/Linux, macOS, ...). :bangbang: Using Windows may cause some issues when installing dependencies. :cry:
 
 #### 0. Cloning the repository :arrow_down:
 
@@ -35,7 +45,7 @@ Or, clone with [GitHub CLI](https://cli.github.com/) :octocat:
 gh repo clone vicw0ng-hk/fake-real-news
 ```
 
-Due to the large size of our model, it is stored with [Git LFS](https://docs.github.com/en/github/managing-large-files/versioning-large-files), and because of [GitHub's bandwidth limit](https://docs.github.com/en/github/managing-large-files/about-storage-and-bandwidth-usage) :construction:, please use this [link](https://drive.google.com/file/d/1iKYjwwRu4ihJApT1ZoZosCAPXkhX9qAk/view?usp=sharing) :point_left: to download [`model.pkl`](app/model/model.pkl) and replace the file in the cloned directory. 
+Due to the large size of our model, it is stored with [Git LFS](https://docs.github.com/en/github/managing-large-files/versioning-large-files), and because of [GitHub's bandwidth limit](https://docs.github.com/en/github/managing-large-files/about-storage-and-bandwidth-usage) :construction:, please use this [link](https://drive.google.com/file/d/1iKYjwwRu4ihJApT1ZoZosCAPXkhX9qAk/view?usp=sharing) :point_left: to download [`app/model/model.pkl`](app/model/model.pkl) and replace the file in the cloned directory. 
 
 #### 1. Installing environment :palm_tree:
 
@@ -51,6 +61,39 @@ pip3 install -r requirements.txt
 python3 app.py
 ```
 
-### Methodology :gear:
+### Methodology :hammer_and_wrench:
 
 Check out the [Methodology](METHOD.md) document.
+
+### Functionalities :gear:
+
+Check out the [Functionalities](FUNCTION.md) document. 
+
+### Limitations :triangular_ruler:
+
+### Terms and Conditions :scroll:
+
+In addition to the restrictions of [GNU Affero General Public License v3.0](LICENSE) of this repo, you also agree to the following terms and conditions:
+
+```
+YOUR USE OF THIS WEB APP CONSTITUTES YOUR AGREEMENT 
+TO BE BOUND BY THESE TERMS AND CONDITIONS OF USE.
+
+1. The classification of the text you submit to this 
+web app is in no way legal recognition. The web app 
+and/or its authors bear no legal responsiblities for 
+its result. If you choose to publish the result, the 
+web app and/or its authors shall not bear any legal 
+consequences relating to this action.  
+2. You shall be liable for the legal reponsibilities 
+of the copyright of the text you submit to this web 
+app. You shall gain the right to copy the text before 
+you submit it to the web app. 
+3. This web app shall not be used by any political 
+organization and/or any entity, partially or entirely, 
+directly or indirectly, funded and/or controlled by a 
+political organization in any jurisdiction. 
+4. In case of any discrepency with any other license, 
+terms or conditions associated with this web app 
+and/or its repository, this agreement shall prevail. 
+```

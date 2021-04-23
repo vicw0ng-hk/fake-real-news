@@ -37,6 +37,23 @@ for i in range(459):
     df.to_csv('fake1.csv/{0:03}.part'.format(i), index=False)
 ```
 
+##### Types
+
+Note the possible categories from the dataset:
+
+| Type | Tag | Description|
+| :----|:----|:----|
+| **Fake News** | fake | Sources that entirely fabricate information, disseminate deceptive content, or grossly distort actual news reports |
+| **Satire** | satire |  Sources that use humor, irony, exaggeration, ridicule, and false information to comment on current events. |
+| **Extreme Bias** | bias  | Sources that come from a particular point of view and may rely on propaganda, decontextualized information, and opinions distorted as facts. |
+| **Conspiracy Theory** | conspiracy  | Sources that are well-known promoters of kooky conspiracy theories. |
+| **Junk Science** | junksci |  Sources that promote pseudoscience, metaphysics, naturalistic fallacies, and other scientifically dubious claims. |
+| **Hate News** | hate |  Sources that actively promote racism, misogyny, homophobia, and other forms of discrimination. |
+| **Clickbait** | clickbait | Sources that provide generally credible content, but use exaggerated, misleading, or questionable headlines, social media descriptions, and/or images. |
+| **Proceed With Caution** | unreliable | Sources that may be reliable but whose contents require further verification. |
+| **Political** | political | Sources that provide generally verifiable information in support of certain points of view or political orientations. |
+| **Credible** | reliable | Sources that circulate news and information in a manner consistent with traditional and ethical practices in journalism (Remember: even credible sources sometimes rely on clickbait-style headlines or occasionally make mistakes. No news organization is perfect, which is why a healthy news diet consists of multiple sources of information). |
+
 #### Language Model
 
 To build a text classifier model we must first build a language model. :speech_balloon:
@@ -96,22 +113,22 @@ learn = text_classifier_learner(dls_clas, AWD_LSTM, drop_mult=0.5,
                                 metrics=accuracy).to_fp16()
 ```
 
-And then load the encoder we saved earier:
+And then load the encoder we saved earlier:
 
 ```python
 learn = learn.load_encoder('finetuned')
 ```
 
-Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 40% - 98%. :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in our discussion of limitations. :thinking:
+Then we start training using `learn.fit_one_cycle()`. We also used `learn.freeze_to()` to freeze some parameters and then train the model, after which we use `learn.unfreeze()` to unfreeze the parameters and then train for a few more epochs. The accuracy came to about 90% for the validation set of the data we used for training. However, since the RAM limits we could not use most of our data and the accuracy on some other data may vary from 30% - 98% (check out one [testing example](test.ipynb)). :slightly_smiling_face: This doesn't seem top-notch, but it's acceptable since news articles generally fit into multiple categories and yet we only have a single-label dataset. More on this in [our discussion of limitations](https://github.com/vicw0ng-hk/fake-real-news#limitations-triangular_ruler). :thinking:
 
 ### Web app
 
-We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [app.py](app/app.py). 
+We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python web framework. :hugs: We love its simplicity. And you can see this by the only main part of our server side :point_right: [`app.py`](app/app.py). 
 
 #### Some Highlights :camera:
 
-- Since Flask supports [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), we ued it for our [HTML templates](app/templates), adding a dynamic component to static templates.
+- Since Flask supports [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), we used it for our [HTML templates](app/templates), adding a dynamic component to static templates.
 - We used [Bootstrap](https://getbootstrap.com/) to customize the look and feel of our web pages. We also included JavaScript and [jQuery](https://jquery.com/) to implement certain styles.  
 - We implemented CSRF Protection ([CSRFProtec](https://flask-wtf.readthedocs.io/en/stable/api.html#flask_wtf.csrf.CSRFProtect) from [Flask-WTF](https://flask-wtf.readthedocs.io/)) in POST form submissions. 
-- We used [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) to interact with [SQLite3](https://www.sqlite.org/index.html), which stores use feedback and we can us the feedback to better train our model. Mode on this in our discussion of functionalities. 
-- We used `load_learner` from fastai to load the trained model and then use the model to get predictions on our input. 
+- We used [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) to interact with [SQLite3](https://www.sqlite.org/index.html), which stores use feedback and we can us the feedback to better train our model. Mode on this in [our discussion of functionalities](FUNCTION.md). 
+- We used [`load_learner`](https://docs.fast.ai/learner.html#load_learner) from fastai to load the trained model and then use the model to get predictions on our input. 
