@@ -48,6 +48,8 @@ conn = sqlite3.connect('feedback.sqlite3')
 df = pd.read_sql_query('SELECT * from Feedback', conn, index_col='id').reset_index(drop=True, inplace=True)
 ```
 
+### Sustainability :earth_americas:
+
 You can further clean the data as in [Methodology](METHOD.md#data) and then use 
 
 ```python
