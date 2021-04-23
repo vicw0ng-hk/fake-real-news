@@ -95,7 +95,7 @@ After training language model, we saved the model (excluding the final layer, of
 
 #### Classifier Model
 
-This is similar to what we have done above :arrow_up:, with dataloaders as:
+This is similar to what we have done above :arrow_up:, with `dataloaders` as:
 
 ```python
 dls_clas = DataBlock(blocks=(TextBlock.from_df('content'),CategoryBlock),
