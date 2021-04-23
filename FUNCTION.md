@@ -6,7 +6,7 @@ After running app (Check [how to run](https://github.com/vicw0ng-hk/fake-real-ne
 
 ![0](img/0.png)
 
-And then you will find out that `URL`, `Title` an `Authors` are optional fields...
+And then you will find out that **URL**, **Title** an **Authors** are optional fields...
 
 ### :one:
 
