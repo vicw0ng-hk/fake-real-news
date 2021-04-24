@@ -44,7 +44,8 @@ def result():
     res = learn.predict(text)[2].tolist()
     prob = {vocab[i]: res[i] for i in range(10)}
     ranking = sorted(prob.items(), key=lambda x: x[1], reverse=True)
-    context = {'url': url, 'title': title, 'authors': authors, 'text': text, 'pred': ranking}
+    context = {'url': url, 'title': title, 'authors': authors, 
+               'text': text, 'pred': ranking}
     return render_template('result.html', context=context)
 
 @app.route('/hidden/', methods=['POST'])
