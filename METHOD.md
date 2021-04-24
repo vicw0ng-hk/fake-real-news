@@ -131,6 +131,6 @@ We used [Flask](https://flask.palletsprojects.com/en/1.1.x/), a minimal Python w
 
 - Since Flask supports [Jinja](https://jinja.palletsprojects.com/en/2.11.x/), we used it for our [HTML templates](app/templates), adding a dynamic component to static templates.
 - We used [Bootstrap](https://getbootstrap.com/) to customize the look and feel of our web pages. We also included JavaScript and [jQuery](https://jquery.com/) to implement certain styles.  
-- We implemented CSRF Protection ([CSRFProtec](https://flask-wtf.readthedocs.io/en/stable/api.html#flask_wtf.csrf.CSRFProtect) from [Flask-WTF](https://flask-wtf.readthedocs.io/)) in POST form submissions. 
+- We implemented CSRF Protection ([CSRFProtect](https://flask-wtf.readthedocs.io/en/stable/api.html#flask_wtf.csrf.CSRFProtect) from [Flask-WTF](https://flask-wtf.readthedocs.io/)) in POST form submissions. 
 - We used [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) to interact with [SQLite3](https://www.sqlite.org/index.html), which stores use feedback and we can us the feedback to better train our model. Mode on this in [our discussion of functionalities](FUNCTION.md). 
 - We used [`load_learner`](https://docs.fast.ai/learner.html#load_learner) from fastai to load the trained model and then use the model to get predictions on our input. 
