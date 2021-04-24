@@ -47,7 +47,8 @@ import pandas as pd
 import sqlite3
 
 conn = sqlite3.connect('feedback.sqlite3')
-df = pd.read_sql_query('SELECT * from Feedback', conn, index_col='id').reset_index(drop=True, inplace=True)
+df = pd.read_sql_query('SELECT * from Feedback', conn, 
+                       index_col='id').reset_index(drop=True, inplace=True)
 ```
 
 You can further clean the data as in [Methodology](METHOD.md#data) and then use 
